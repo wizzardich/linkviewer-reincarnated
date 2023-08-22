@@ -1,0 +1,4 @@
+use plotsdb
+db.createCollection("links")
+db.links.createIndex( { _id:1 } );
+db.links.createIndex( { submitted: 1 }, { expireAfterSeconds: 432000 } );
