@@ -1,6 +1,6 @@
-FROM golang:1.20-alpine as builder
+FROM golang:1.21-alpine as builder
 
-ENV SRC_DIR=/go/src/github.com/wizzardich/geek-reminder-bot/
+ENV SRC_DIR=/go/src/github.com/wizzardich/linkviewer-reincarnated/
 
 WORKDIR $SRC_DIR
 
@@ -13,11 +13,11 @@ COPY . $SRC_DIR
 
 RUN go build -o /app/linkviewer-reincarnated
 
-FROM golang:1.20-alpine 
+FROM golang:1.21-alpine 
 
-LABEL org.opencontainers.image.source="https://github.com/wizzardich/geek-reminder-bot" \
-      org.opencontainers.image.title="Geek Reminder Bot" \
-      org.opencontainers.image.description="A Telegram Bot backend that serves as a Doodle scheduler" \
+LABEL org.opencontainers.image.source="https://github.com/wizzardich/linkviewer-reincarnated" \
+      org.opencontainers.image.title="Link Viwer Reincarnated" \
+      org.opencontainers.image.description="Link viewer backend in Go" \
       org.opencontainers.image.authors="wizzardich" \
       org.opencontainers.image.licenses="MIT"
 
