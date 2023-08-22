@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/gofiber/fiber/v2 v2.48.0
 	github.com/google/uuid v1.3.1
-	go.mongodb.org/mongo-driver v1.12.0
+	go.mongodb.org/mongo-driver v1.12.1
 )
 
 require (
