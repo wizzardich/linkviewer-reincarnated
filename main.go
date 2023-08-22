@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 
@@ -36,9 +36,7 @@ func main() {
 			return c.SendStatus(404)
 		}
 
-		json, _ := json.Marshal(record.Links)
-
-		return c.SendString(string(json))
+		return c.JSON(record.Links)
 	})
 
 	app.Post("/link-viewer/rest/store", func(c *fiber.Ctx) error {
@@ -54,7 +52,7 @@ func main() {
 			return c.SendStatus(500)
 		}
 
-		return c.SendString(id)
+		return c.SendString(fmt.Sprintf("\"%s\"", id))
 	})
 
 	log.Fatal(app.Listen(":3000"))
