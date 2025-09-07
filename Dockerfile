@@ -1,4 +1,4 @@
-FROM golang:1.21-alpine as builder
+FROM golang:1.23-alpine as builder
 
 ENV SRC_DIR=/go/src/github.com/wizzardich/linkviewer-reincarnated/
 
@@ -13,7 +13,7 @@ COPY . $SRC_DIR
 
 RUN go build -o /app/linkviewer-reincarnated
 
-FROM golang:1.21-alpine 
+FROM golang:1.23-alpine 
 
 LABEL org.opencontainers.image.source="https://github.com/wizzardich/linkviewer-reincarnated" \
       org.opencontainers.image.title="Link Viwer Reincarnated" \
