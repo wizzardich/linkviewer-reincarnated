@@ -1,5 +1,5 @@
-golang 1.21.0
-golangci-lint 1.54.2
+golang 1.23.0
+golangci-lint 2.4.0
 hadolint 2.12.1-beta
 direnv system
 github-cli 2.32.1
