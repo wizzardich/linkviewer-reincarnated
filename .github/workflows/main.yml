@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "1.21.0"
-      - uses: asdf-vm/actions/install@v3
+      - uses: actions/checkout@v5
+#      - uses: actions/setup-go@v5
+#        with:
+#          go-version: "1.25.1"
+      - uses: jdx/mise-action@v2
       # run linter and tests
       - run: golangci-lint run
       - run: go test -v ./...
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Build and publish a Docker image for ${{ github.repository }}
         uses: macbre/push-to-ghcr@master
