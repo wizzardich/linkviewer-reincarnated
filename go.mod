@@ -3,7 +3,7 @@ module github.com/wizzardich/linkviewer-reincarnated
 go 1.23.0
 
 require (
-	github.com/gofiber/fiber/v2 v2.52.9
+	github.com/gofiber/fiber/v2 v2.52.11
 	github.com/google/uuid v1.6.0
 	go.mongodb.org/mongo-driver v1.17.4
 )
